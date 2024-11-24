@@ -1,4 +1,4 @@
-# Kubernetes Architecture and Components
+ # Kubernetes Architecture and Components
 
 ![kubernetes Architecture](https://www.aquasec.com/wp-content/uploads/2020/11/Kubernetes-101-Architecture-Diagram.jpg) 
 
@@ -140,7 +140,7 @@ kubeadm init --pod-network-cidr=10.244.0.0/16
 
 #You will receive a token to join worker nodes to the master node. Copy and paste this token into a notepad.
 
-# Dont copy this kubeadm join 172.31.30.229:6443 --token cz9cwu.2muc1x6gqz4d7d6f \
+# Example : Dont copy this kubeadm join 172.31.30.229:6443 --token cz9cwu.2muc1x6gqz4d7d6f \
 #        --discovery-token-ca-cert-hash sha256:1836752e4fbf1411263019edaecd13a53241f73eab06b5440bffe476f3dcb986
 
 #Install Calico Network Plugin
