@@ -39,3 +39,5 @@ The Control (or Master) Node in Kubernetes manages the cluster and ensures the d
   - **containerd**
   - **CRI-O**
   - Others compatible with the CRI standard.
+![image](https://github.com/user-attachments/assets/1093fdfb-81cd-4c7d-a18f-32f72dffee05)
+
