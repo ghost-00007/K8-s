@@ -17,6 +17,8 @@ export CLUSTER_NAME=tamil.pramothdevops.xyz
 export EDITOR='/usr/bin/nano'
 #export K8S_VERSION=1.6.4
 ```
+After copying the above files to .bashrc run “ source .bashrc ”.
+
 #Install kops 
 
 ``` bash
