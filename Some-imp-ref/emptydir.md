@@ -11,6 +11,7 @@ An EmptyDir is a type of Kubernetes volume that is initially empty and is create
 ### Storage Location
 - By default, the EmptyDir's backing storage is the Node's filesystem.
 - It can be backed by memory if specified (`emptyDir.medium: "Memory"`), making it suitable for storing sensitive or temporary data.
+- It can be found on the location wher pod is scheduled /var/lib/kubelet/pods/<uid>/volumes/<volumenname>
 
 ## Use Cases
 - Temporary scratch space for applications (e.g., processing files or intermediate data).
