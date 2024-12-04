@@ -16,7 +16,7 @@ spec:
     - name: shared-date-logs
       mountPath: /var/log # Mounting log dir so app can write to it.
   - name: container-serving-dates # Name of second container
-    image: nginx:1.19.0 # Image for second container
+    image: nginx # Image for second container
     ports:
       - containerPort: 80 # Defining what port to use.
     volumeMounts:

@@ -17,15 +17,15 @@ spec:
         - name: DB_USER
           value: "admin"
       resources:  
-        limits: 
-          cpu: "500m"
-          memory: "500Mi"
-        requests:
+        limits: #max
+          cpu: "500m" #0.5 core cup 1000m 1 core cpup
+          memory: "500Mi" #Ki Ti Gi
+        requests: # min 
           cpu: "200m"
           memory: "200Mi"
       volumeMounts:
         - name: nginx-data
-          mountPath: /usr/share/nginx/html 
+          mountPath: /usr/share/nginx/html/
   volumes:
     - name: nginx-data
       emptyDir: {}
