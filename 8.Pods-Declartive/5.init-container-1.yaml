@@ -22,7 +22,7 @@ spec:
     - wget
     - "-O"
     - "/work-dir/index.html"
-    - https://raw.githubusercontent.com/promo286/K8-s/refs/heads/main/index.html?raw=true
+    - https://github.com/promo286/K8-s/blob/main/index.html?raw=true
     volumeMounts:
     - name: workdir
       mountPath: "/work-dir"
