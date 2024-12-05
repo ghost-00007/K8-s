@@ -12,3 +12,7 @@ ReplicaSet and ReplicationController are Kubernetes objects used to ensure a spe
 | **Backward Compatibility**   | Fully backward compatible with ReplicationController. | Older implementation with no set-based selector support. |
 
 ---
+
+## Summary
+
+While both can maintain the desired state of pods, **ReplicaSet** is the modern and more flexible option, making it the preferred choice for managing pod replicas. **ReplicationControllers** are still supported for backward compatibility but are generally not used in newer configurations.
