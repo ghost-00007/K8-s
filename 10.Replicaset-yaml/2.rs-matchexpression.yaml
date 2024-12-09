@@ -10,10 +10,10 @@ spec:
     matchLabels:
       app: production
     matchExpressions:                           #matchLabels
-      - {key: app, operator: NotIn, values: ["dev", "development"]}
-      - {key: app, operator: In, values: ["dev", "development"]}
-      - {key: app, operator: Exists}
-      - {key: app, operator: DoesNotExist}
+      # - {key: app, operator: NotIn, values: ["production", "prod"]}
+      - {key: app, operator: In, values: ["production", "prod"]}
+      # - {key: app, operator: Exists}
+      # - {key: app, operator: DoesNotExist}
   template:
     metadata:
       name: temp-nginx

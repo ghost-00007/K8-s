@@ -6,11 +6,13 @@ spec:
   replicas: 3
   selector:
     app: nginx
+    env: production
   template:
     metadata:
       name: temp-nginx
       labels:
         app: nginx
+        env: production
     spec:
       containers:
       - name: my-nginx
