@@ -11,7 +11,7 @@ spec:
       app: temp-nginx
   template:
     metadata:
-      labels:
+      labels:    
         app: temp-nginx
     spec:
       containers:
@@ -22,5 +22,5 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 1       # Maximum number of pods that can be unavailable during the update
+      maxUnavailable: 25     # Maximum number of pods that can be unavailable during the update
       maxSurge: 1             # Maximum number of pods that can be created above the desired number of pods during the update
