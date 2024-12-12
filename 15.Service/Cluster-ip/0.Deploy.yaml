@@ -9,11 +9,13 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: temp-nginx
+      app: nginx
+      env: prod
   template:
     metadata:
       labels:
-        app: temp-nginx
+        app: nginx
+        env: prod
     spec:
       containers:
       - name: nginx

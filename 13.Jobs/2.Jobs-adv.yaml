@@ -14,13 +14,11 @@ spec:
       containers:
       - name: example
         image: python
-        command:           # The jobs fails as there is at least one failed index
-                           # (all even indexes fail in here), yet all indexes
-                           # are executed as maxFailedIndexes is not exceeded.
+        command:    
         - python3
         - -c
         - |
           import os, sys
           print("Hello world")
-          if int(os.environ.get("JOB_COMPLETION_INDEX")) % 2 == 0:
-            sys.exit(1)          
+          if int(os.environ.get("JOB_COMPLETION_INDEX")) %  2 == 0:
+            sys.exit(1)    
