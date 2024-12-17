@@ -23,7 +23,4 @@ spec:
     hostPath:
       path: /data/foo
       type: Directory
-  - name: shared-date-logs
-    hostPath:
-      path: /data/foo
-      type: Directory
+
