@@ -22,4 +22,6 @@ spec:
   - name: shared-date-logs
     hostPath:
       path: /data/foo
-      type: Directory
+      type: DirectoryOrCreate
+  - name: shared-date-logs
+    emptyDir: {}
