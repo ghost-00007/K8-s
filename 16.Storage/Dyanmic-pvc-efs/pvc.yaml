@@ -7,5 +7,5 @@ spec:
     - ReadWriteMany # EFS supports read-write by multiple nodes
   resources:
     requests:
-      storage: 5Gi # Request for 5 GiB of storage
+      storage: 5Gi # Storage request (not enforced by EFS)
   storageClassName: efs-sc # Reference to the EFS StorageClass

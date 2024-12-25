@@ -1,9 +1,0 @@
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: efs-sc  # Make sure this matches the name in your PVC
-provisioner: efs.csi.aws.com
-parameters:
-  provisioningMode: EFS  # This specifies that EFS will be used for provisioning
-  fsID: <your-efs-filesystem-id>  # Replace with your EFS filesystem ID
-  # Optionally, include other parameters such as region or mount target ID

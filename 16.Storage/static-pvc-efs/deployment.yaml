@@ -32,6 +32,6 @@ spec:
           mountPath: /usr/share/nginx/html/efs # Adjust this path as needed
 
       volumes:
-      - name: efs-storage # Name of the EFS volume referenced in volumeMounts.
-        persistentVolumeClaim:
-          claimName: efs-claim # Reference to the PVC created earlier.
+        - name: efs-storage # Name of the EFS volume referenced in volumeMounts.
+          persistentVolumeClaim:
+            claimName: efs-claim # Reference to the PVC created earlier.
