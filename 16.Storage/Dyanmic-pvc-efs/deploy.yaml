@@ -30,7 +30,6 @@ spec:
         volumeMounts:
         - name: efs-storage # Mounting EFS volume
           mountPath: /usr/share/nginx/html # Path for serving content
-
       volumes:
       - name: efs-storage
         persistentVolumeClaim:
