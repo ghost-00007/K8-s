@@ -31,3 +31,5 @@ spec:
         requests:
           storage: 1Gi
       storageClassName: ebs-sc
+  # updateStrategy:
+  #   type: RollingUpdate  # or OnDelete
