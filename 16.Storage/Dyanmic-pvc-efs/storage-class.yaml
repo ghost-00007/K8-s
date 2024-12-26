@@ -4,7 +4,7 @@ metadata:
   name: efs-sc
 provisioner: efs.csi.aws.com
 parameters:
-  fileSystemId: fs-0381e30da5a9480d4
+  fileSystemId: fs-0e362bd2f669fbf6a
   provisioningMode: efs-ap # Use EFS Access Points
   directoryPerms: "0777" # Permissions for the root directory (required for efs-ap)
   gid: "1000"            # Group ID

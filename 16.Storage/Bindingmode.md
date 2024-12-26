@@ -22,6 +22,3 @@ In Kubernetes, when configuring **StorageClasses** for dynamic provisioning of *
 | **WaitForFirstConsumer** | Delays binding until a Pod that uses the PVC is created. | When resource optimization and scheduling flexibility are priorities. |
 
 Understanding these binding modes helps Kubernetes users manage their storage resources more effectively, ensuring that they align with application needs and cluster resource management strategies.
-
-### Citations
-[1] [Immediate vs. WaitForFirstConsumer Explanation](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/9883156/b7cfe734-755f-4f85-96f1-f3567b3c38ad/paste.txt)

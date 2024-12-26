@@ -5,7 +5,7 @@ metadata:
   labels:
     app: multi-container
 spec:
-  replicas: 1 # Specify the number of replicas
+  replicas: 3 # Specify the number of replicas
   selector:
     matchLabels:
       app: multi-container

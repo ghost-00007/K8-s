@@ -12,6 +12,6 @@ spec:
   storageClassName: gp3
   csi:
     driver: ebs.csi.aws.com
-    volumeHandle: vol-0ea6b94eaceb4a33a
+    volumeHandle: vol-0711eef89c1878063
 
 
