@@ -4,8 +4,8 @@ metadata:
   name: generic-secret
 type: Opaque
 data:
-  USERNAME:
-  password: <base64-encoded-value2>
+  USERNAME: YWRtaW4= 
+  PASSWORD: dGVzdEAxMjM=
 
 ---
 apiVersion: apps/v1

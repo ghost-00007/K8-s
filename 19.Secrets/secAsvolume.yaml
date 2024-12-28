@@ -4,7 +4,7 @@ metadata:
   name: test-secret
 data:
   username: bXktYXBw
-  password: Mzk1MjgkdmRnN0pi
+  password: dGVzdEAxMjM=
 
 --- 
 
