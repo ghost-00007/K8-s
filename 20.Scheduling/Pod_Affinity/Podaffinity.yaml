@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -6,9 +7,10 @@ metadata:
     app: nginx
     env: production
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
+      app: nginx   
       env: production
   template:
     metadata:
@@ -16,7 +18,16 @@ spec:
         app: nginx
         env: production
     spec:
-      nodeName: ip-192-168-36-130.ec2.internal 
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: name
+                    operator: In
+                    values:
+                      - nginx-25  # Ensure that these pods are scheduled with other 'nginx' pods.
+              topologyKey: "kubernetes.io/hostname"  # Pods should be co-located on the same node.
       containers:
         - name: write-container
           image: alpine

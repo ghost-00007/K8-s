@@ -6,7 +6,7 @@ metadata:
     app: nginx
     env: production
 spec:
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels:
       app: nginx   
@@ -22,10 +22,10 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchExpressions:
-                  - key: app
+                  - key: name
                     operator: In
                     values:
-                      - nginx  # Prevents scheduling on nodes with existing 'nginx' pods.
+                      - nginx-25  # Prevents scheduling on nodes with existing 'nginx' pods.
               topologyKey: "kubernetes.io/hostname"  # Ensures they are not on the same node.
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

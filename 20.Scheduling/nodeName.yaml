@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: nodename-demo
 spec:
-  nodeName: ip-192-168-23-18.ec2.internal
+  nodeName: ip-192-168-18-222.ec2.internal
   containers:
     - name: demo
       image: ubuntu:latest 

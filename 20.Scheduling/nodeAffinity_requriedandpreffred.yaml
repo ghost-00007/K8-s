@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -7,7 +6,7 @@ metadata:
     app: nginx
     env: production
 spec:
-  replicas: 10
+  replicas: 5
   selector:
     matchLabels:
       app: nginx   
@@ -19,15 +18,6 @@ spec:
         env: production
     spec:
       affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - nginx  # Ensure that these pods are scheduled with other 'nginx' pods.
-              topologyKey: "kubernetes.io/hostname"  # Pods should be co-located on the same node.
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
@@ -36,7 +26,16 @@ spec:
                     operator: In
                     values:
                       - ssd 
-                      - hdd   
+                      - hdd
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 50
+              preference:
+                matchExpressions:
+                  - key: region
+                    operator: In
+                    values:
+                      - us-east-1
+                      - us-east-2
       containers:
         - name: write-container
           image: alpine
