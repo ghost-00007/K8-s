@@ -19,7 +19,7 @@ spec:
       tolerations:
         - key: "dedicated"
           operator: "Equal"
-          value: "special-user"
+          value: "special15-user"
           effect: "PreferNoSchedule"
       containers:
         - name: write-container
@@ -45,5 +45,5 @@ spec:
         - name: shared-date-logs
           emptyDir: {}
 
-#kubectl taint nodes <node-name> dedicated=special-user:PreferNoSchedule
-# This command applies a taint that suggests the scheduler should avoid placing pods on this node unless they have a matching toleration.
+# taint nodes ip-192-168-15-129.ec2.internal dedicated=special-user:PreferNoSchedule
+# This command applies a taint that suggests the scheduler should avoid placing pods on this node unless they have a matching toleration.kubectl

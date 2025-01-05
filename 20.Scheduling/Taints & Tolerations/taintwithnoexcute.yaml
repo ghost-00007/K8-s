@@ -46,5 +46,5 @@ spec:
           emptyDir : {}  
 
 
-#kubectl taint nodes <node-name> dedicated=special-user:NOEXECUTE 
+#kubectl taint nodes ip-192-168-49-125.ec2.internal dedicated=special-user:NOEXECUTE 
 # This command applies a taint that not only prevents new pods from being scheduled but also evicts existing pods that do not tolerate the taint.

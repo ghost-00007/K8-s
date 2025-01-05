@@ -6,7 +6,7 @@ metadata:
     app: nginx
     env: production
 spec:
-  replicas: 4
+  replicas: 10
   selector:
     matchLabels:
       env: production
