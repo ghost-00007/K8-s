@@ -9,7 +9,7 @@ spec:
   - name: goproxy
     image: registry.k8s.io/goproxy:0.1
     ports:
-    - containerPort: 8080
+    - containerPort: 8081
     readinessProbe:
       tcpSocket:
         port: 8080
