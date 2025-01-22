@@ -81,6 +81,12 @@ To update the information of all added repositories:
 ```sh
 helm repo update
 ```
+### Removing Repositories
+
+``` sh 
+helm repo remove bitnami
+
+```
 
 
 
