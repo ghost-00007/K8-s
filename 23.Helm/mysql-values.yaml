@@ -1,0 +1,5 @@
+auth:
+  rootPassword: "test12345"
+  database: " demo"
+  username: "tamilcloud"
+  passsword: "tamil12345" 

@@ -1,0 +1,29 @@
+replicaCount: 2
+
+image:
+  repository: dockersamples/example-voting-app
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: "300m"
+    memory: "256Mi"
+  requests:
+    cpu: "150m"
+    memory: "128Mi"
+
+db:
+  enabled: true
+
+redis:
+  enabled: true
+
+worker:
+  enabled: true
+
+# Additional configurations as needed...
