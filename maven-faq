@@ -30,7 +30,7 @@ A: Artifacts are the output of the build process. They can be JAR, WAR, or any o
 A: You can use the versioning scheme in the POM file to specify the version of the artifact. You can use the major.minor.patch format to specify the version.
 
 9. How can I exclude dependencies in Maven?
-A: You can exclude dependencies in the POM file by using the <exclusions> tag inside the <dependency> tag.
+A: You can exclude dependencies in the POM file by using the <exclusions> ... </exclusions>  tag inside the <dependency> tag.
 
 10. How can I run a specific Maven goal?
 A: You can run a specific Maven goal by using the mvn command followed by the goal name. For example, mvn clean install will run the clean and install goals.
@@ -47,7 +47,7 @@ A: The settings.xml file is used to configure Maven settings such as repositorie
 14. How can I change the default location of the local repository in Maven?
 A: You can change the default location of the local repository by setting the maven.repo.local property in the settings.xml file. You can specify the path to the new location of the local repository.
 
-15. How can I create a custom Maven plugin?
+15. How can I create a custom Maven plugin? 
 A: You can create a custom Maven plugin by implementing the AbstractMojo class and defining the plugin configuration in the pom.xml file. You can package the plugin as a JAR file and install it in the local repository.
 
 16. How can I use a custom Maven plugin in a project?

@@ -1,0 +1,52 @@
+1. What is SAST?
+A: Static Application Security Testing (SAST) is a type of security testing that is performed without executing the code. It is used to identify security vulnerabilitie, bugs, codesmells in the source code of an application.
+
+2. What is code coverage?
+A: Code coverage is a metric used to measure the percentage of code that is executed during automated tests. It helps to identify the areas of code that are not tested and can be used to improve the quality of the test suite.
+
+3. What is a code smell?
+A: A code smell is a characteristic in the source code that indicates a deeper problem. It is a sign that the code may be difficult to maintain, understand, or extend. Code smells are not bugs, but they can lead to bugs if not addressed.
+
+4. What is a security vulnerability?
+A: A security vulnerability is a weakness in the code or design of an application that can be exploited by an attacker to compromise the security of the application. Security vulnerabilities can lead to data breaches, unauthorized access, and other security incidents.
+
+5. What is a bug?
+A: A bug is an error, flaw, or fault in the code of an application that causes it to behave in an unintended way. Bugs can lead to crashes, data corruption, and other issues in the application.
+
+6. What is a test case?
+A: A test case is a set of conditions or inputs that are used to test a specific feature or functionality of an application. Test cases are used to verify that the application behaves as expected under different scenarios.
+
+7. What is difference between unit testing and integration testing?
+A: Unit testing is a type of testing that focuses on testing individual units or components of an application in isolation. Integration testing is a type of testing that focuses on testing how different units or components of an application work together.
+
+8. What are quality gates in SonarQube?
+A: Quality gates in SonarQube are a set of predefined conditions or rules that must be met before a project can be considered as "passed". Quality gates are used to ensure that the code quality meets the required standards.
+
+9. What are Quality Profiles in SonarQube?
+A: Quality profiles in SonarQube are a set of rules and configurations that are used to analyze the code quality of a project. Quality profiles define the coding standards, best practices, and rules that are used to evaluate the code quality.
+
+10. Have you installed SonarQube in your project?
+A: Yes, we have installed SonarQube in our project to analyze the code quality, identify bugs, security vulnerabilities, and code smells in the source code. We also have cloud-based SonarQube integration to automate code quality checks.
+
+11. What is the difference between SonarQube and SonarCloud?
+A: SonarQube is an on-premise code quality management platform that is installed on a local server, while SonarCloud is a cloud-based code quality management platform that is hosted on the cloud. Both platforms provide similar features for analyzing code quality.
+
+12. What is a SonarQube scanner?
+A: A SonarQube scanner is a tool that is used to analyze the source code of an application and send the analysis results to the SonarQube server for processing. The scanner is used to perform static code analysis and identify code quality issues.
+
+13. What is a SonarQube project and how to authenticate it?
+A: A SonarQube project is a collection of source code files that are analyzed by SonarQube to identify code quality issues. To authenticate a SonarQube project, you need to generate an authentication token from the SonarQube server and use it to authenticate the scanner.
+
+14. Where do you configure SonarQube settings in a Maven project?
+A: SonarQube settings in a Maven project are configured in the pom.xml file. You can specify the SonarQube server URL, project key, authentication token, and other settings in the pom.xml file to enable SonarQube analysis.
+
+15. What are webhooks in SonarQube?
+A: Webhooks in SonarQube are a feature that allows you to trigger external services or applications based on events that occur in SonarQube. Webhooks can be used to integrate SonarQube with other tools and automate workflows based on code quality analysis results.
+
+16. Where do you integrate SonarQube in Jenkins pipeline?
+A: SonarQube integration in Jenkins pipeline is done using the SonarQube Scanner plugin. You can add the SonarQube scanner step in the Jenkins pipeline script to analyze the code quality of the project and send the analysis results to the SonarQube server. Manage Jenkins -> Configure System -> SonarQube servers.
+
+17. Where do you integrate SonarQube in Azure DevOps pipeline?
+A: SonarQube integration in Azure DevOps pipeline is done using the SonarQube extension. You can add the SonarQube Prepare, Run, and Publish tasks in the Azure DevOps pipeline to analyze the code quality of the project and send the analysis results to the SonarQube server.
+
+A Service Connection is a way to connect to an external or remote service from Azure DevOps. It provides the necessary credentials and connection details to access the service securely. Service connections are used in Azure DevOps pipelines to interact with external services such as Azure, GitHub, Docker, and others.
