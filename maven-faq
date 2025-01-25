@@ -1,0 +1,60 @@
+1. How are you building you Java Spring Boot application?
+A: There are multiple tools for building Java Spring Boot applications. Some of the popular tools are Maven, Gradle, and Ant. 
+
+2. How Maven is different from Gradle?
+A: Maven and Gradle are both build tools for Java projects. Maven is based on XML and is more declarative in nature. Gradle is based on Groovy and is more programmatic in nature.
+
+3. What is Maven Build Lifecycle?
+A: Maven Build Lifecycle is a sequence of phases that are executed in order to build a project. The phases are validate, compile, test, package, verify, install, and deploy.
+
+mvn clean - Removes the target directory
+mvn test - Runs the unit tests --dSkipTests to skip tests
+mvn compile - Compiles the source code to create bytecode with .class files
+mvn package - Packages the compiled code into a distributable format like JAR or WAR depending on the POM file.
+mvn install - Installs the packaged code into the local repository .m2
+mvn deploy - Deploys the packaged code to a remote repository like nexus or artifactory
+
+4. What is a Maven POM file?
+A: POM stands for Project Object Model. It is an XML file that contains information about the project and configuration details and dependencies used by Maven to build the project.
+
+5. Can we have multiple POM files in a project?
+A: No, a project can have only one POM file. The POM file is located in the root directory of the project.
+
+6. What are parent and child POM files?
+A: Parent POM file is a POM file that contains common configurations and dependencies that are inherited by the child POM files. Child POM files can override the configurations and dependencies defined in the parent POM file.
+
+7. What are artifacts in Maven?
+A: Artifacts are the output of the build process. They can be JAR, WAR, or any other distributable format that is created by the build process.
+
+8. How can I use semantic versioning in Maven artifacts?
+A: You can use the versioning scheme in the POM file to specify the version of the artifact. You can use the major.minor.patch format to specify the version.
+
+9. How can I exclude dependencies in Maven?
+A: You can exclude dependencies in the POM file by using the <exclusions> tag inside the <dependency> tag.
+
+10. How can I run a specific Maven goal?
+A: You can run a specific Maven goal by using the mvn command followed by the goal name. For example, mvn clean install will run the clean and install goals.
+
+11. How can I skip tests in Maven?
+A: You can skip tests in Maven by using the -DskipTests flag with the mvn command. For example, mvn install -DskipTests will skip the tests during the install phase.
+
+12. How can I run a specific test in Maven?
+A: You can run a specific test in Maven by using the -Dtest flag with the mvn command followed by the test class name. For example, mvn test -Dtest=MyTest will run the MyTest class.
+
+13. what are settings.xml in Maven?
+A: The settings.xml file is used to configure Maven settings such as repositories, proxies, and profiles. It is located in the .m2 directory in the user's home directory. If helps to upload artifacts to the remote repository.
+
+14. How can I change the default location of the local repository in Maven?
+A: You can change the default location of the local repository by setting the maven.repo.local property in the settings.xml file. You can specify the path to the new location of the local repository.
+
+15. How can I create a custom Maven plugin?
+A: You can create a custom Maven plugin by implementing the AbstractMojo class and defining the plugin configuration in the pom.xml file. You can package the plugin as a JAR file and install it in the local repository.
+
+16. How can I use a custom Maven plugin in a project?
+A: You can use a custom Maven plugin in a project by adding the plugin configuration in the pom.xml file. You can specify the group id, artifact id, and version of the plugin in the plugin configuration.
+
+17. How can I create a multi-module Maven project?
+A: You can create a multi-module Maven project by creating a parent POM file that contains modules and dependencies. Each module can have its own POM file and source code.
+
+
+
