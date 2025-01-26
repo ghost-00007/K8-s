@@ -1,0 +1,41 @@
+# Database configuration
+replicaCount: 1
+
+db:
+  image: postgres:15-alpine
+  username: postgres
+  password: postgres
+  port: 5432
+  volume:
+    mountPath: /var/lib/postgresql/data
+    emptyDir: {}
+
+# Redis configuration
+redis:
+  image: redis:alpine
+  port: 6379
+  volume:
+    mountPath: /data
+    emptyDir: {}
+
+# Vote service configuration
+vote:
+  image: dockersamples/examplevotingapp_vote
+  port: 80
+  service:
+    type: NodePort
+    port: 8080
+    nodePort: 31000
+
+# Result service configuration
+result:
+  image: dockersamples/examplevotingapp_result
+  port: 80
+  service:
+    type: NodePort
+    port: 8081
+    nodePort: 31001
+
+# Worker configuration
+worker:
+  image: dockersamples/examplevotingapp_worker

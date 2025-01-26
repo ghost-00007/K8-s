@@ -1,0 +1,46 @@
+# Stage-specific values for the voting-app Helm chart
+
+# Database configuration
+db:
+  image: postgres:15-alpine
+  username: postgres
+  password: postgres
+  port: 5432
+  volume:
+    mountPath: /var/lib/postgresql/data
+    emptyDir: {}
+  replicas: 2  # Increased replicas for stage environment
+
+# Redis configuration
+redis:
+  image: redis:alpine
+  port: 6379
+  volume:
+    mountPath: /data
+    emptyDir: {}
+  replicas: 2  # Increased replicas for stage environment
+
+# Vote service configuration
+vote:
+  image: dockersamples/examplevotingapp_vote
+  port: 80
+  replicas: 2  # Increased replicas for stage environment
+  service:
+    type: NodePort
+    port: 8082  # Updated port for stage environment
+    nodePort: 31002  # Updated nodePort for stage environment
+
+# Result service configuration
+result:
+  image: dockersamples/examplevotingapp_result
+  port: 80
+  replicas: 2  # Increased replicas for stage environment
+  service:
+    type: NodePort
+    port: 8083  # Updated port for stage environment
+    nodePort: 31003  # Updated nodePort for stage environment
+
+# Worker configuration
+worker:
+  image: dockersamples/examplevotingapp_worker
+  replicas: 2  # Increased replicas for stage environment
