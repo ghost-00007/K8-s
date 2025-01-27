@@ -5,11 +5,11 @@ metadata:
   labels:
     {{- include "voting-app.labels" . | nindent 4 }}
   annotations:
-    "helm.sh/hook": test
+    "helm.sh/hook": post-install
+    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   containers:
     - name: wget
       image: busybox
-      command: ['wget']
-      args: ['-qO-', 'http://{{ .Release.Name }}-vote:{{ .Values.vote.service.port }}']  # Test connectivity to the vote service
+      command: ['sh', '-c', 'echo "Values: {{ toYaml .Values }}"; sleep 10; wget -qO- http://vote:{{ .Values.vote.service.nodePort | default 8080 }}']
   restartPolicy: Never
