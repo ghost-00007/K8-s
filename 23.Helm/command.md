@@ -110,3 +110,63 @@ dependencies:
 helm dependency update 
 
 
+
+
+pipeline {
+    agent any
+
+    stages {
+        // Stage 1: Package the Helm chart
+        stage("Package Helm Chart") {
+            steps {
+                sh """
+                helm package voting-app
+                """
+            }
+        }
+
+        // Stage 2: Publish the Helm chart to JFrog Artifactory
+        stage("Publish Helm Chart to JFrog") {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'jfrog-creds', usernameVariable: 'JFROG_USERNAME', passwordVariable: 'JFROG_PASSWORD')]) {
+                    sh """
+                    # Set up Helm registry credentials
+                    export HELM_EXPERIMENTAL_OCI=1
+                    echo ${JFROG_PASSWORD} | helm registry login -u ${JFROG_USERNAME} --password-stdin <artifactory-url>
+
+                    # Push the Helm chart to JFrog
+                    CHART_VERSION=$(helm show chart voting-app | grep '^version:' | awk '{print $2}')
+                    helm push voting-app-${CHART_VERSION}.tgz oci://<artifactory-url>/<helm-repo>
+                    """
+                }
+            }
+        }
+
+
+sed -i 's|^\( *image: \)postgres:15-alpine|\1new-db-image:new-tag|g' values.yaml
+sed -i 's|^\( *image: \)redis:alpine|\1new-redis-image:new-tag|g' values.yaml
+sed -i 's|^\( *image: \)dockersamples/examplevotingapp_vote|\1new-vote-image:new-tag|g' values.yaml
+sed -i 's|^\( *image: \)dockersamples/examplevotingapp_result|\1new-result-image:new-tag|g' values.yaml
+sed -i 's|^\( *image: \)dockersamples/examplevotingapp_worker|\1new-worker-image:new-tag|g' values.yaml
+
+$ python3 -m http.server --bind 127.0.0.1
+
+helm repo index 
+
+helm repo add <repo folder> 
+
+helm repo update:
+
+github pages
+
+oci repository 
+
+https://docs.docker.com/docker-hub/repos/manage/hub-images/oci-artifacts/
+
+local repo 
+
+index.yaml 
+and helm.gz 
+
+Push to github 
+
