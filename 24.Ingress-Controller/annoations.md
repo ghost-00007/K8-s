@@ -139,3 +139,30 @@ The AWS Load Balancer Controller provides a wide range of annotations to help yo
 - **Combining Annotations**: You can combine these annotations to fine-tune the behavior of your ALB to match your application's requirements, whether you need to manage SSL termination, health checking, or routing logic.
 
 Using these annotations effectively allows you to leverage the full power of AWS ALBs while managing them through Kubernetes, giving you a high degree of control over traffic management and load balancing.
+
+
+The AWS Load Balancer Controller supports two primary schemes for the ALB:
+
+1. **internet-facing**  
+   - This scheme exposes the ALB to the public internet.  
+   - Use this when you want your application accessible from the internet.
+
+2. **internal**  
+   - This scheme creates an ALB that is only accessible within your VPC.  
+   - Use this when you want to restrict access to your application to internal resources (such as internal users, services, or VPN connections).
+
+**Example Usage:**
+
+- **Internet-facing ALB:**
+
+  ```yaml
+  alb.ingress.kubernetes.io/scheme: internet-facing
+  ```
+
+- **Internal ALB:**
+
+  ```yaml
+  alb.ingress.kubernetes.io/scheme: internal
+  ```
+
+Choose the scheme that best fits your application's access requirements.
